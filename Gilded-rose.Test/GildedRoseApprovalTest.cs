@@ -40,11 +40,7 @@ public class GildedRoseApprovalTest
         }
 
         [Fact]
-<<<<<<< HEAD
         public Task OriginalBeahviorShouldNotChange()
-=======
-        public Task Test_OriginalBeahvior_ShouldNotChange()
->>>>>>> origin/master
         {
             var outpuBuilder = new StringBuilder();
             var gildedRose = CreateGildedRoseSample();
