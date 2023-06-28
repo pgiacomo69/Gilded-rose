@@ -10,7 +10,7 @@ namespace Gilded_rose
         {
             this.Items = Items;
         }
-
+        
         public void UpdateQuality()
         {
             for (var i = 0; i < Items.Count; i++)
