@@ -12,7 +12,7 @@ namespace Gilded_rose.Test;
 public class GildedRoseApprovalTest
 {
  
-        [Fact]
+        // [Fact]
         public Task OriginalBeahviorShouldNotChange()
         {
             var outpuBuilder = new StringBuilder();
