@@ -12,33 +12,6 @@ namespace Gilded_rose.Test;
 public class GildedRoseApprovalTest
 {
  
-        private  GildedRose CreateGildedRoseSample()
-        {
-            return new GildedRose( new List<Item>{
-                    new ("Aged Brie", 2, 0),
-                    new ("Sulfuras, Hand of Ragnaros",  0,  80),
-                    new ("Backstage passes to a TAFKAL80ETC concert",15,20),
-                    new ("Madoran Bronzebeard Hammer", 10, 20),
-                    new ("Ironforge Mountain Stone", 5, 7),
-                }
-            );
-        }
-
-        private string StringifyItemSnapshot(int day, Item item)
-        {
-            return $"Day={day}: Name={item.Name}, SellIn={item.SellIn}, Quality={item.SellIn}\n";
-        }
-
-        private string ItemsSnapshotAtDay(int day, GildedRose gildedRose)
-        {
-            var outputBuilder = new StringBuilder();
-            for (int i = 0; i < gildedRose.Items.Count;i++)
-            {
-                outputBuilder.Append(StringifyItemSnapshot(day, gildedRose.Items[i]));
-            }
-            return outputBuilder.ToString();
-        }
-
         [Fact]
         public Task OriginalBeahviorShouldNotChange()
         {
@@ -52,5 +25,34 @@ public class GildedRoseApprovalTest
             }
             return Verifier.Verify(outpuBuilder.ToString());
         }
+        
+        private  GildedRose CreateGildedRoseSample()
+        {
+            return new GildedRose( new List<Item>{
+                    new ("Aged Brie", 2, 0),
+                    new ("Sulfuras, Hand of Ragnaros",  0,  80),
+                    new ("Backstage passes to a TAFKAL80ETC concert",15,20),
+                    new ("Madoran Bronzebeard Hammer", 10, 20),
+                    new ("Ironforge Mountain Stone", 5, 7),
+                }
+            );
+        }
+        
+        private string ItemsSnapshotAtDay(int day, GildedRose gildedRose)
+        {
+            var outputBuilder = new StringBuilder();
+            for (int i = 0; i < gildedRose.Items.Count;i++)
+            {
+                outputBuilder.Append(StringifyItemSnapshot(day, gildedRose.Items[i]));
+            }
+            return outputBuilder.ToString();
+        }
 
+        private string StringifyItemSnapshot(int day, Item item)
+        {
+            return $"Day={day}: Name={item.Name}, SellIn={item.SellIn}, Quality={item.SellIn}\n";
+        }
+        
+        
+        
 }
