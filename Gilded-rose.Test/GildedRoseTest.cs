@@ -12,6 +12,7 @@ namespace Gilded_rose.Test
             var app = new GildedRose(items);
             app.UpdateQuality();
             Assert.Equal("foo", items[0].Name);
+            Assert.Equal(0, items[0].Quality);
         }
 
     }
